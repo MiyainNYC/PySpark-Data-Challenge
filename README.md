@@ -2,17 +2,17 @@
 
 # Dataset
 
-All TLC Trip Record Data for Green Cab in NYC from 2013 through 2016.
+All TLC Trip Record Data for Green Cab in NYC from 2013 through 2016.(5.22 Gigabytes, 45299607 records)
 
 ### Features
 
-*[Features Provided](http://www.nyc.gov/html/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf)*
+1. [Features Provided](http://www.nyc.gov/html/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf)
 
-*Features Modified or Added:*
+2. Features Modified or Added:
 
-> *Year, Month, Day, Day of Week, Hour, IsHoliday, Trip_time*
+* Year, Month, Day, Day of Week, Hour, IsHoliday, Trip_time
 
-> *Hourly Weather Data including: summary,temperature, WindBearing, WindSpeed, Visibility
+* Hourly Weather Data including: summary,temperature, WindBearing, WindSpeed, Visibility
 
 # Tools
 * PySpark
