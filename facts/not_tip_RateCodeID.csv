@@ -1,0 +1,13 @@
+,RateCodeID,not_tip,count(date)
+0,4,True,7120
+1,4,False,4841
+2,3,True,10784
+3,6,False,112
+4,3,False,3464
+5,5,True,35944
+6,6,True,8
+7,1,False,6902393
+8,5,False,55137
+9,1,True,11209959
+10,2,False,16857
+11,2,True,44541
