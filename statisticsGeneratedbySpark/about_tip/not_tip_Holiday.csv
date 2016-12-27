@@ -1,0 +1,5 @@
+,Holiday,not_tip,count(date)
+0,1,False,175327
+1,0,False,6807477
+2,1,True,285089
+3,0,True,11023267
