@@ -1,4 +1,5 @@
 # Green-cab-ridership
+![Alt text](https://github.com/MiyainNYC/Green-cab-ridership/blob/master/charts/map.png)
 
 # Dataset
 
@@ -33,6 +34,6 @@ All TLC Trip Record Data for Green Cab in NYC from 2013 through 2016.(5.22 Gigab
  
 # Recommendations
 
-* Volume
-* Efficiency
-* Tip
+* Volume-wise
+* Efficiency-wisse
+* Tip-wise
