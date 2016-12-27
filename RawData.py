@@ -1,3 +1,14 @@
+################################################################
+
+## RawData.py
+## This is the file for ridership collection
+## Created by Miya Wang
+## Last update: 12/2016
+
+## All right reserved (c) 2016
+##################################################################
+
+
 import pandas as pd
 import io
 import requests
@@ -37,31 +48,10 @@ for year in years:
             shape_origin = c.shape
             print('%s :%s' % (year, month))
 
-            # c = c[c['VendorID'].isin(list(range(1,3)))!=0]
-            # c = c[c['Store_and_fwd_flag'].isin(list(['Y','N']))!=0]
-            # c = c[c['RateCodeID'].isin(list(range(1,7)))!=0]
-            # c = c[c['Passenger_count']<=5]
-            # c = c[c['Trip_distance']>0]
-            # c = c[c['Fare_amount']>0]
-            # c = c[c['MTA_tax']>0]
-            # c = c[c['Extra']>0]
-            # c = c[c['Tip_amount']>0]
-            # c = c[c['Tolls_amount']>0]
-            # c = c[c['improvement_surcharge']>0]
-            # c = c[c['Total_amount']>0]
-            # c = c[c['Payment_type'].isin(list(range(1,7)))!=0]
-            # c = c[c['Trip_type '].isin(list(range(1,3)))!=0]
-
-
             c['lpep_pickup_datetime'] = pd.to_datetime(c['lpep_pickup_datetime'], format='%Y-%m-%d %H:%M:%S')
             c['Lpep_dropoff_datetime'] = pd.to_datetime(c['Lpep_dropoff_datetime'], format='%Y-%m-%d %H:%M:%S')
             c['interval_min'] = list(map(lambda x: x / 60, list(
                 map(lambda x: x.total_seconds(), list(c['Lpep_dropoff_datetime'] - c['lpep_pickup_datetime'])))))
-
-            # c = c[c['interval_min']>0]
-            # c = c[c['Trip_distance']/c['interval_min']<0.417]
-
-            # print('%s rows deleted, %s rows remained'%((shape_origin[0]- len(c)),len(c)))
 
             c['weekofday'] = list(map(lambda x: x.weekday(), c['lpep_pickup_datetime']))
             c['hour'] = list(map(lambda x: x.hour, c['lpep_pickup_datetime']))
@@ -72,7 +62,7 @@ for year in years:
             c['date'] = pd.to_datetime(c['date'], format='%Y-%m-%d')
             c['Holiday'] = c['date'].isin(holidays)
 
-            # print('%d columns added'%(c.shape[1]-shape_origin[1]))
+
 
             col_del = ['VendorID', 'lpep_pickup_datetime', 'Lpep_dropoff_datetime', 'Pickup_longitude',
                        'Pickup_latitude', 'Dropoff_longitude', 'Dropoff_latitude', 'Ehail_fee']
