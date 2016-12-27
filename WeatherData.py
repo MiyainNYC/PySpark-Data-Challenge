@@ -1,9 +1,21 @@
-api_key = '9df031d5c848bb78f4b6365e4e7ce2e8'
+################################################################
+
+## WeatherData.py
+## This is the file for weather collection
+## Created by Miya Wang
+## Last update: 12/2016
+
+## All right reserved (c) 2016
+##################################################################
+
+
+#api_key = '9df031d5c848bb78f4b6365e4e7ce2e8'
+api_key = '2bbae2422757b9be4efaa7722e9be466'
 import forecastio
 import datetime
 
-years = [2013, 2014, 2015, 2016]
-months = list(range(1, 13))
+years = [2014]
+months = list(range(10, 13))
 days = list(range(1, 32))
 hours = list(range(0, 24))
 
@@ -12,8 +24,8 @@ import sqlite3 as lite
 con = lite.connect('weather.db')
 with con:
     cur = con.cursor()
-    cur.execute('drop table if exists weather')
-    create_table_query = 'create table weather' + '(temp,icon,windBearing,windSpeed,visibility,hour,date)'
+    cur.execute('drop table if exists weather_3')
+    create_table_query = 'create table weather_3' + '(temp,icon,windBearing,windSpeed,visibility,hour,date)'
     cur.execute(create_table_query)
 
 for year in years:
@@ -31,11 +43,11 @@ for year in years:
                     windSpeed = hourly.data[hour].d['windSpeed']
                     visibility = hourly.data[hour].d['visibility']
                     row = [temp, icon, windBearing, windSpeed, visibility, hour, date]
-                    cur.execute('''Insert into weather values (?,?,?,?,?,?,?)''', row)
+                    cur.execute('''Insert into weather_3 values (?,?,?,?,?,?,?)''', row)
             except Exception:
                 pass
 with con:
     cur = con.cursor()
-    cur.execute("""select count(*) from weather""")
+    cur.execute("""select count(*) from weather_3""")
     all_data = cur.fetchall()
-    print(all_data)  # 15735 records
+    print(all_data)  # 15735 recordS+8394 FOR 2015+4228 FOR 2016 +2140
