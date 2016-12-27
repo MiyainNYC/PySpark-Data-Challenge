@@ -23,5 +23,16 @@ All TLC Trip Record Data for Green Cab in NYC from 2013 through 2016.(5.22 Gigab
 
 # Methodology
 
-* Exploratory Data Analysis
+* Aggregate or filter or subset data with Spark
 
+* Visualize and conduct analysis with Python/Pivot table/Tableau/R
+
+* Develop insights
+
+# Key trends and findings
+ 
+# Recommendations
+
+* Volume
+* Efficiency
+* Tip
